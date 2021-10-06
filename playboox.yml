@@ -6,7 +6,7 @@
   tasks:
 
     - name: ensure that the desired snmp strings are present
-      cisco.ios.ios_config:
+      ios_config:
         commands:
           - snmp-server community ansible-public RO
           - snmp-server community ansible-private RW
