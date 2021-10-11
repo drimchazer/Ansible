@@ -13,7 +13,7 @@
 
     - name: gather facts
       ios_facts:
-	gather_subset: config
+        gather_subset: config
               #commands:
               #- snmp-server community ansible-public RO
               #- snmp-server community ansible-private RW
