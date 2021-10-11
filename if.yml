@@ -17,7 +17,7 @@
         #gather_network_resources: all
         commands:
           username adduser1 password addpassword
-        when: ios_facts['ansible_net_hostname']== "VIOS1"  
+        when: ios_facts['ansible_net_hostname']=='VIOS1'  
               #- snmp-server community ansible-public RO
               #- snmp-server community ansible-private RW
         #commands:
