@@ -1,0 +1,18 @@
+---
+- name: snmp ro/rw string configuration
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_connection: network_cli
+  become: yes
+  become_method: enable  
+  collections:
+    - cisco.ios
+
+  tasks:
+
+    - name: gather facts
+      ios_facts:
+              #commands:
+              #- snmp-server community ansible-public RO
+              #- snmp-server community ansible-private RW
