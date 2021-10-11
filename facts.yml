@@ -13,8 +13,8 @@
 
     - name: gather facts
       ios_facts:
-       available_network_resources: yes
-       gather_network_resources: all
+        available_network_resources: true
+        gather_network_resources: all
               #commands:
               #- snmp-server community ansible-public RO
               #- snmp-server community ansible-private RW
