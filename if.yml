@@ -20,6 +20,6 @@
         when: ios_facts['ansible_net_hostname']== "VIOS1"  
               #- snmp-server community ansible-public RO
               #- snmp-server community ansible-private RW
-        commands:
-          username adduser password addpassword
-        when: ios_facts['ansible_net_hostname']== ""VIOS" 
+        #commands:
+        #  username adduser password addpassword
+        #when: ios_facts['ansible_net_hostname']== ""VIOS" 
