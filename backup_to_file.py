@@ -1,9 +1,12 @@
 import paramiko
 import time
+import datetime
 from getpass import getpass
 
 username = 'admin15'
 password = 'password'
+
+date_today = datetime.datetime.now().replace(microsecond=0)
 
 rtr_list = open ('devices.txt')
 for rtr in rtr_list:
@@ -23,7 +26,7 @@ for rtr in rtr_list:
 	output = DEVICE_ACCESS.recv(65000)
 	print(output.decode('ascii'))
 	
-	BAK_file = open('Backup_' + rtr.strip(), 'w')
+	BAK_file = open('Backup_' + rtr.strip() + ' - ' + str(date_today), 'w')
 	BAK_file.write(output.decode('ascii'))
 	BAK_file.close
 	
