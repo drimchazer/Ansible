@@ -1,0 +1,39 @@
+---
+
+leafs:
+  hosts:
+    leaf01:
+      ansible_host: 192.168.21.131
+    leaf02:
+      ansible_host: 192.168.21.132
+  vars:
+    ansible_network_os: cisco.ios.ios
+    ansible_user: admin1
+
+spines:
+  hosts:
+    spine01:
+      ansible_host: 10.1.1.1
+    spine02:
+      ansible_host: 10.2.2.2
+  vars:
+    ansible_network_os: cisco.ios.ios
+    ansible_user: admin15
+network:
+  children:
+    leafs:
+    spines:
+
+webservers:
+  hosts:
+    webserver01:
+      ansible_host: 10.16.10.15
+    webserver02:
+      ansible_host: 10.16.10.16
+  vars:
+    ansible_user: my_server_user
+
+datacenter:
+  children:
+    network:
+    webservers:

@@ -1,0 +1,2 @@
+[leafs]
+leaf01 ansible_host=192.168.21.131 ansible_network_os=cisco.ios.ios ansible_user=admin15
