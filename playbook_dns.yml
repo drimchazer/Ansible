@@ -1,0 +1,17 @@
+---
+- name: configure cisco routers
+  hosts: ROUTERS
+  connection: ansible.netcommon.network_cli
+  gather_facts: no
+  vars:
+    dns: "8.8.8.8 4.4.4.4"
+
+  tasks:
+  - name: configure hostname
+    cisco.ios.ios_config:
+      lines: hostname {{ inventory_hostname }}
+
+  - name: configure DNS
+    cisco.ios.ios_config:
+      lines: ip name-server {{ dns }}
+
